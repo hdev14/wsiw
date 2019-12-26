@@ -1,0 +1,13 @@
+div#header .header-navbar {
+	background-color: var(--wsiw-grey-medium) !important;
+}
+
+div#header .header-navbar a {
+	color: var(--wsiw-yellow);
+}
+
+div#header .header-navbar span {
+	color: var(--wsiw-yellow) !important; 
+}
+
+
