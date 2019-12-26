@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:600&display=swap');
+
+:root {
+	--wsiw-grey-intense: #1D2937;
+	--wsiw--gray-medium: #2A3949;
+    --wsiw-grey-normal: #556B86;
+    --wsiw-red: #F97575;
+    --wsiw-yellow: #FACF5A;
+	--wsiw-green: #71E4A9;	
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+}
+
+body {
+	background: var(--wsiw-grey-intense);
+	color: var(--wsiw-yellow);
+	font-family: 'Josefin Sans', sans-serif;
+}
