@@ -16,8 +16,10 @@
 	padding: 0;
 }
 
-body {
-	background: var(--wsiw-grey-intense);
-	color: var(--wsiw-yellow);
-	font-family: 'Josefin Sans', sans-serif;
+@media only screen and (max-width: 600px) {
+	body {
+		background: var(--wsiw-grey-intense);
+		color: var(--wsiw-yellow);
+		font-family: 'Josefin Sans', sans-serif;
+	}
 }
