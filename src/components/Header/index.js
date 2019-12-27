@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import './styles.css';
 
 //componentes
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import {
 	Collapse,
 	Navbar,
@@ -14,17 +16,20 @@ import {
 } from 'reactstrap';
 
 const Header = () => {
-	const [collapse, setCollapse] = useState(true);
 
-	const toggleNavbar = () => setCollapse(!collapse);
+	const [collapsed, setCollapsed] = useState(true);
+	
+	const toggleNavbar = () => setCollapsed(!collapsed);
 
 	return (
 		<div id="header">
-			<Navbar className="header-navbar">
+			<Navbar className="header-navbar" fixed="top" >
 				<NavbarBrand href="/" className="mr-auto">WSIW?</NavbarBrand>
-				<NavbarToggler onClick={toggleNavbar} className="mr-2" />
-				<Collapse isOpen={!collapse}>
-					<Nav>
+				<NavbarToggler onClick={toggleNavbar}>
+					<FontAwesomeIcon id="header-menu" icon={faBars} size="lg"/>
+				</NavbarToggler>
+				<Collapse navbar isOpen={!collapsed}>
+					<Nav navbar>
 						<NavItem>
 							<NavLink href="/">Series</NavLink>
 						</NavItem>

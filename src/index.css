@@ -1,12 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:600&display=swap');
 
 :root {
+	/* colors */
 	--wsiw-grey-intense: #1D2937;
 	--wsiw-grey-medium: #2A3949;
     --wsiw-grey-normal: #556B86;
     --wsiw-red: #F97575;
     --wsiw-yellow: #FACF5A;
-	--wsiw-green: #71E4A9;	
+	--wsiw-green: #71E4A9;
+
+	/* sizes */
+	--size-1x: 10px;
+	--size-2x: 20px;
+	--size-3x: 30px;
+	--size-4x: 40px;
+	--size-5x: 50px;
+	--size-10x: 100px;
+
 }
 
 * {
@@ -29,4 +39,9 @@
 	div[id^="page-"] h2 { font-size: 18px; }
 
 	div[id^="page-"] p { font-size: 14px; }
+
+	div.wsiw-container {
+		margin-bottom: var(--size-4x);
+		margin-top: var(--size-10x);
+	}
 }

@@ -1,0 +1,9 @@
+div#page-series #container-series h2 { margin-bottom: var(--size-3x); }
+
+div#page-series #footer-series {
+	bottom: 0;
+	color: var(--wsiw-grey-normal);
+	padding: var(--size-1x);
+	position: absolute;
+	width: 100%;
+}

@@ -1,13 +1,15 @@
 div#header .header-navbar {
-	background-color: var(--wsiw-grey-medium) !important;
+	background-color: var(--wsiw-grey-medium);
 }
 
-div#header .header-navbar a {
+div#header .header-navbar a,
+div#header .header-navbar #header-menu {
 	color: var(--wsiw-yellow);
 }
 
-div#header .header-navbar span {
-	color: var(--wsiw-yellow) !important; 
+div#header .header-navbar a {
+	left: 50%;
+	position: relative;
+	transform: translateX(-50%);
 }
-
 
