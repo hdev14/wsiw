@@ -1,0 +1,15 @@
+div#tags {
+	display: flex;
+}
+
+div.tag {
+	margin: 0 2px;
+	padding: 2px var(--size-2x);
+	border-radius: 15px;
+	background-color: var(--wsiw-yellow);
+	color: var(--wsiw-grey-intense);
+}
+
+div.tag.circle {
+	padding: 2px 10px;
+}

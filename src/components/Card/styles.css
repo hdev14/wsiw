@@ -11,7 +11,7 @@ div#card {
 
 div#card #card-tags {
 	align-self: flex-end;
-	margin: var(--size-1x) var(--size-2x);
+	margin: var(--size-1x);
 }
 
 div#card h1 {
