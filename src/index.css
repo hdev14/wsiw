@@ -28,14 +28,14 @@
 	padding: 0;
 }
 
+body {
+	background: var(--wsiw-grey-intense);
+	color: var(--wsiw-yellow);
+	font-family: 'Josefin Sans', sans-serif;
+}
+	
 @media only screen and (max-width: 600px) {
 	
-	body {
-		background: var(--wsiw-grey-intense);
-		color: var(--wsiw-yellow);
-		font-family: 'Josefin Sans', sans-serif;
-	}
-
 	div[id^="page-"] h1 { font-size: 24px; }
 
 	div[id^="page-"] h2 { font-size: 18px; }
