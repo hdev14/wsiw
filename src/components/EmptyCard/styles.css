@@ -1,6 +1,6 @@
 	
 div#empty-card {
-	height: var(--size-15x);
+	height: 25vh;
 	width: 100%;
 	border-radius: 15px;
 	background-color: var(--wsiw-grey-medium);

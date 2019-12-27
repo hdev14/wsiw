@@ -15,7 +15,7 @@ import {
 	NavLink
 } from 'reactstrap';
 
-const Header = ({ back }) => {
+const Header = ({ back = true }) => {
 
 	const [collapsed, setCollapsed] = useState(true);
 	
@@ -31,8 +31,8 @@ const Header = ({ back }) => {
 					</a>
 				}
 				<NavbarBrand href="/" className="mr-auto">WSIW?</NavbarBrand>
-				<NavbarToggler onClick={toggleNavbar}>
-					<FontAwesomeIcon id="header-menu" icon={faBars} />
+				<NavbarToggler id="header-menu" onClick={toggleNavbar}>
+					<FontAwesomeIcon icon={faBars} />
 				</NavbarToggler>
 				<Collapse navbar isOpen={!collapsed}>
 					<Nav navbar>

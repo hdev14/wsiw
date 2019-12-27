@@ -8,15 +8,19 @@ div#header .header-navbar #header-menu {
 	color: var(--wsiw-yellow);
 }
 
+div#header .header-navbar #header-menu {
+	margin: -15px;
+}
+
 div#header .header-navbar a {
-	left: 50%;
+	left: 48%;
 	position: relative;
 	transform: translateX(-50%);
 }
 
 div#header .header-navbar a#header-back {
 	position: relative;
-	left: var(--size-1x);
+	left: 5px;
 }
 
 

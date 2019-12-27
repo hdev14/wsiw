@@ -20,13 +20,22 @@ const Series = () => {
 				<h2> SERIES </h2>
 				
 				{ false ? 
+					<div>
 						<EmptyCard />
+						<h2 id="footer-series" className="text-center"> Add a new series ! </h2>
+					</div>
 					:	
+					<div>
 						<Card />
+						<Card />
+						<Card />
+						<Card />
+						<Card />
+					</div>
 				}
 
 			</Container>
-			<h2 id="footer-series" className="text-center"> Add a new series ! </h2>
+			
 		</div>
 	);
 }
