@@ -1,4 +1,4 @@
-div#page-series #container-series h2 { margin-bottom: var(--size-3x); }
+div#page-series #container-series h2 { margin-bottom: var(--size-1x); }
 
 div#page-series #footer-series {
 	bottom: 0;
@@ -7,3 +7,5 @@ div#page-series #footer-series {
 	position: absolute;
 	width: 100%;
 }
+	
+
