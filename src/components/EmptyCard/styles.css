@@ -1,0 +1,29 @@
+div#empty-card {
+	height: var(--size-15x);
+	width: 100%;
+	border-radius: 15px;
+	background-color: var(--wsiw-grey-medium);
+	transition: all .2s ease-out;
+	animation: pulse-shadow 1.3s infinite;
+}
+
+div#empty-card:hover {
+	transform: scale(1.03);
+}
+
+div#empty-card #plus {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 2em;
+}
+
+@keyframes pulse-shadow {
+	0% {
+		box-shadow: 1px 1px 1px rgba(255, 255, 255, .1);
+	}
+	100% {
+		box-shadow: 1px 1px 1px 10px rgba(255, 255, 255, .01);
+	}
+}
