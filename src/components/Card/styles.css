@@ -1,0 +1,42 @@
+div#card {
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 15px;
+	box-shadow: 1px 5px 5px rgba(0, 0, 0, .2);
+	display: flex;
+	flex-direction: column;
+	height: var(--size-15x);
+	justify-content: space-between;
+}
+
+div#card #card-tags {
+	align-self: flex-end;
+	margin: var(--size-1x) var(--size-2x);
+}
+
+div#card h1 {
+	margin-bottom: var(--size-3x); 
+	padding-left: var(--size-1x);
+	text-shadow: 1px 2px 2px black;
+}
+
+div#card #card-alert {
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	color: var(--wsiw-grey-intense);
+	padding: 5px 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+div#card #card-alert.watching {
+	background-color: var(--wsiw-green);
+}
+
+div#card #card-alert.to-watch {
+	background-color: var(--wsiw-red);
+}
+
+div#card #card-alert.attempt {
+	background-color: var(--wsiw-yellow);
+}

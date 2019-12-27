@@ -19,7 +19,7 @@ const Series = () => {
 			<Container id="container-series" className="wsiw-container themed-container" fluid="sm">
 				<h2> SERIES </h2>
 				
-				{ true ? 
+				{ false ? 
 						<EmptyCard />
 					:	
 						<Card />

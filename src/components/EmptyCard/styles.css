@@ -9,6 +9,7 @@ div#empty-card {
 
 div#empty-card:hover {
 	transform: scale(1.03);
+	animation: none;
 }
 
 div#empty-card #plus {
