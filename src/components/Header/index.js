@@ -4,7 +4,7 @@ import './styles.css';
 
 //componentes
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import {
 	Collapse,
 	Navbar,
@@ -15,7 +15,7 @@ import {
 	NavLink
 } from 'reactstrap';
 
-const Header = () => {
+const Header = ({ back }) => {
 
 	const [collapsed, setCollapsed] = useState(true);
 	
@@ -24,9 +24,15 @@ const Header = () => {
 	return (
 		<div id="header">
 			<Navbar className="header-navbar" fixed="top" >
+				{ back && 
+					// Link to={props.to}
+					<a id="header-back" href={back}> 
+						<FontAwesomeIcon icon={faChevronLeft} />
+					</a>
+				}
 				<NavbarBrand href="/" className="mr-auto">WSIW?</NavbarBrand>
 				<NavbarToggler onClick={toggleNavbar}>
-					<FontAwesomeIcon id="header-menu" icon={faBars} size="lg"/>
+					<FontAwesomeIcon id="header-menu" icon={faBars} />
 				</NavbarToggler>
 				<Collapse navbar isOpen={!collapsed}>
 					<Nav navbar>

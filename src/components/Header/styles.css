@@ -13,3 +13,8 @@ div#header .header-navbar a {
 	transform: translateX(-50%);
 }
 
+div#header .header-navbar a#header-back {
+	position: relative;
+	left: var(--size-1x);
+}
+
