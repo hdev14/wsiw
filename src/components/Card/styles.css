@@ -4,12 +4,16 @@ div#card {
 	background-size: cover;
 	border-radius: 15px;
 	box-shadow: 1px 5px 5px rgba(0, 0, 0, .2);
+	cursor: pointer;
 	display: flex;
 	flex-direction: column;
 	height: 25vh;
 	justify-content: space-between;
 	margin-bottom: var(--size-2x);
+	transition: all .2s ease-out;
 }
+
+div#card:hover { transform: scale(1.03); }
 
 div#card #card-tags {
 	align-self: flex-end;

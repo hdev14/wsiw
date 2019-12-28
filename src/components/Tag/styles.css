@@ -15,3 +15,8 @@ div.tag.circle {
 	color: var(--wsiw-yellow);
 	padding: 2px 10px;
 }
+
+div.tag.dark {
+	background-color: var(--wsiw-grey-normal);
+	color: var(--wsiw-grey-intense);
+}

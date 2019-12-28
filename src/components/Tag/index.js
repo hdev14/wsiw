@@ -2,9 +2,9 @@ import React from 'react';
 
 import './styles.css';
 
-const Tag = ({ tagValue = 'comedy', moreTag = false, more = 1 }) => (
+const Tag = ({ classes = 'tag', tagValue = 'comedy', moreTag = false, more = 1 }) => (
 	<div id="tags">
-		<div className="tag">{tagValue}</div>
+		<div className={classes} >{tagValue}</div>
 		{ moreTag && 
 			<div className="tag circle">+{more}</div>
 		}

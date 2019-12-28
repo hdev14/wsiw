@@ -15,7 +15,7 @@ import {
 	NavLink
 } from 'reactstrap';
 
-const Header = ({ back = true }) => {
+const Header = ({ back = '', series = false, genre = false , id = '' }) => {
 
 	const [collapsed, setCollapsed] = useState(true);
 	
@@ -31,25 +31,30 @@ const Header = ({ back = true }) => {
 					</a>
 				}
 				<NavbarBrand href="/" className="mr-auto">WSIW?</NavbarBrand>
-				<NavbarToggler id="header-menu" onClick={toggleNavbar}>
-					<FontAwesomeIcon icon={faBars} />
-				</NavbarToggler>
-				<Collapse navbar isOpen={!collapsed}>
-					<Nav navbar>
-						<NavItem>
-							<NavLink href="/">Series</NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href="/">New series</NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href="/">Genres</NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href="/">New genres</NavLink>
-						</NavItem>
-					</Nav>
-				</Collapse> 
+
+				{ !(series || genre ) &&
+					<div>
+						<NavbarToggler className="header-option" onClick={toggleNavbar}>
+							<FontAwesomeIcon icon={faBars} />
+						</NavbarToggler>
+						<Collapse navbar isOpen={!collapsed}>
+							<Nav navbar>
+								<NavItem>
+									<NavLink href="/">Series</NavLink>
+								</NavItem>
+								<NavItem>
+									<NavLink href="/">New series</NavLink>
+								</NavItem>
+								<NavItem>
+									<NavLink href="/">Genres</NavLink>
+								</NavItem>
+								<NavItem>
+									<NavLink href="/">New genres</NavLink>
+								</NavItem>
+							</Nav>
+						</Collapse> 
+					</div>
+				}
 			</Navbar>
 		</div>
 	);

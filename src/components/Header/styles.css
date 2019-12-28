@@ -4,11 +4,11 @@ div#header .header-navbar {
 }
 
 div#header .header-navbar a,
-div#header .header-navbar #header-menu {
+div#header .header-navbar .header-option {
 	color: var(--wsiw-yellow);
 }
 
-div#header .header-navbar #header-menu {
+div#header .header-navbar .header-option {
 	margin: -15px;
 }
 
