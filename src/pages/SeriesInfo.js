@@ -5,9 +5,10 @@ import '../styles/series-info.css';
 //components 
 import Header from '../components/Header';
 import Tag from '../components/Tag';
-import { Container } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPen } from '@fortawesome/free-solid-svg-icons';
+import FormSeries from '../components/FormSeries';
+import { 
+	Container,
+} from 'reactstrap';
 
 const SeriesInfo = ({
 	bgImg = '/assets/card-bg.jpeg', 
@@ -16,7 +17,7 @@ const SeriesInfo = ({
 	description = 'Mussum Ipsum, cacilds vidis litro abertis. Nec orci ornare consequat. Praesent lacinia ultrices consectetur.',
 	status = 'watching'
 }) => {
-	
+
 	const styles = {
 		backgroundImage: `radial-gradient(rgba(0, 0, 0, 0.1) , rgba(0, 0, 0, 0.3)), url(${bgImg})`
 	};
@@ -24,10 +25,13 @@ const SeriesInfo = ({
 	return (
 		<div id="page-series-info">
 			<Header back="/series" series/>
-			<FontAwesomeIcon id="edit" icon={faPen}/>
+
+			<FormSeries />
+
 			<div id="poster" style={styles}>
-				<img src={posterImg} />
+				<img src={posterImg} alt="img"/>
 			</div>
+
 			<Container className="wsiw-container themed-container" fluid="sm"> 
 				<h2 id="title">{title}</h2>
 				<div id="tags">
@@ -36,6 +40,7 @@ const SeriesInfo = ({
 				</div>
 				<h2 id="desc">{description}</h2>
 			</Container>
+			
 			<div id="alert" className={status}>
 				{status}
 			</div>

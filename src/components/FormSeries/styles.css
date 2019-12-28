@@ -1,0 +1,38 @@
+button#edit {
+	background: none;
+	border: none;
+	color: var(--wsiw-yellow);
+	padding: 5px;
+	position: fixed;
+	right: 10px;
+	top: 10px;
+	z-index: 9999;
+}
+
+#form-series-modal .modal-content {
+	background-color: var(--wsiw-grey-medium);
+}
+
+#form-series-modal .modal-header,
+#form-series-modal .modal-footer {
+	border: none;
+}
+
+#form-series-modal .modal-header span {
+	
+}
+
+#form-series-modal button.btn {
+	background-color: var(--wsiw-green);
+	border: none;
+	color: var(--wsiw-grey-intense); 
+}
+
+#form-series-modal button.btn#save {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#form-series-modal button.btn#close {
+	background-color: var(--wsiw-red);
+}
