@@ -26,7 +26,7 @@ const SeriesInfo = ({
 		<div id="page-series-info">
 			<Header back="/series" series/>
 
-			<FormSeries />
+			<FormSeries modalTitle="Edit" />
 
 			<div id="poster" style={styles}>
 				<img src={posterImg} alt="img"/>

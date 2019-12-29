@@ -33,7 +33,7 @@ const Header = ({ back = '', series = false, genre = false , id = '' }) => {
 				<NavbarBrand href="/" className="mr-auto">WSIW?</NavbarBrand>
 
 				{ !(series || genre ) &&
-					<div>
+					<>
 						<NavbarToggler className="header-option" onClick={toggleNavbar}>
 							<FontAwesomeIcon icon={faBars} />
 						</NavbarToggler>
@@ -53,7 +53,7 @@ const Header = ({ back = '', series = false, genre = false , id = '' }) => {
 								</NavItem>
 							</Nav>
 						</Collapse> 
-					</div>
+					</>
 				}
 			</Navbar>
 		</div>

@@ -43,6 +43,6 @@ div#card #card-alert.to-watch {
 	background-color: var(--wsiw-red);
 }
 
-div#card #card-alert.attempt {
+div#card #card-alert.assited {
 	background-color: var(--wsiw-yellow);
 }
