@@ -20,12 +20,3 @@ div#empty-card #plus {
 	transform: translate(-50%, -50%);
 	font-size: 2em;
 }
-
-@keyframes pulse-shadow {
-	0% {
-		box-shadow: 1px 1px 1px rgba(255, 255, 255, .1);
-	}
-	100% {
-		box-shadow: 1px 1px 1px 10px rgba(255, 255, 255, .01);
-	}
-}
