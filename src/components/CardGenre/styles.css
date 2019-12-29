@@ -1,0 +1,21 @@
+div#card-genre {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: var(--size-5x);
+	width: 100%;
+	background-color: var(--wsiw-grey-medium);
+	border-radius: 5px;
+	margin-bottom: var(--size-2x);
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+div#card-genre > p {
+	margin: 0 var(--size-2x);
+	text-transform: capitalize;
+}
+
+div#card-genre button.btn.btn-link {
+	color: var(--wsiw-yellow);
+	margin-right: var(--size-1x);
+}

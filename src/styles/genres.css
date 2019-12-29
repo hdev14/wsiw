@@ -1,0 +1,7 @@
+div#page-genres h2#footer-genres {
+	bottom: 0;
+	color: var(--wsiw-grey-normal);
+	padding: var(--size-1x);
+	position: absolute;
+	width: 90%;
+}

@@ -19,7 +19,7 @@ const Series = () => {
 			<Container id="container-series" className="wsiw-container themed-container" fluid="sm">
 				<h2> SERIES </h2>
 				
-				{ false ? 
+				{ true ? 
 					<div>
 						<EmptyCard />
 						<h2 id="footer-series" className="text-center"> Add a new series ! </h2>

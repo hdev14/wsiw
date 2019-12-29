@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './styles.css';
+
 //components
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
@@ -12,10 +14,7 @@ const CardGenre = ({ name = 'genre' }) => (
 	<div id="card-genre">
 		<p>{name}</p>
 		<ButtonGroup className="actions">
-			<Button outline color="warning" size="sm">
-				<FontAwesomeIcon icon={faPen} />
-			</Button>
-			<Button outline color="warning" size="sm">
+			<Button color="link" size="sm">
 				<FontAwesomeIcon icon={faTrashAlt} />
 			</Button>
 		</ButtonGroup>
