@@ -17,7 +17,7 @@ const Genres = () => {
 			<Container className="wsiw-container themed-container" fluid="sm">
 				<h2>GENRES</h2>
 
-				{ true ? 
+				{ false ? 
 					<div>
 						<EmptyCardGenre />
 						<h2 id="footer-genres" className="text-center"> Add a new genres ! </h2>

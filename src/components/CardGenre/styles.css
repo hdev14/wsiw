@@ -19,3 +19,29 @@ div#card-genre button.btn.btn-link {
 	color: var(--wsiw-yellow);
 	margin-right: var(--size-1x);
 }
+
+div#delete-modal .modal-content {
+	background-color: var(--wsiw-grey-medium);
+}
+
+div#delete-modal .modal-header {
+	border: none;
+}
+
+div#delete-modal #delete-options {
+	text-align: right;
+}
+
+div#delete-modal #delete-options button {
+	color: var(--wsiw-grey-intense);
+	border: none;
+}
+
+div#delete-modal #delete-options button#cancel {
+	margin-right: var(--size-1x);
+	background-color: var(--wsiw-red);
+}
+
+div#delete-modal #delete-options button#yes {
+	background-color: var(--wsiw-green);
+}
