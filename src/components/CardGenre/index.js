@@ -4,7 +4,7 @@ import './styles.css';
 
 //components
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPen, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import {
 	ButtonGroup,
 	Button,

@@ -1,14 +1,3 @@
-button#edit {
-	background: none;
-	border: none;
-	color: var(--wsiw-yellow);
-	padding: 5px;
-	position: fixed;
-	right: 10px;
-	top: 10px;
-	z-index: 9999;
-}
-
 #form-series-modal .modal-content {
 	background-color: var(--wsiw-grey-medium);
 }
@@ -69,4 +58,3 @@ div#radios div.watching {
 div#radios div.assisted {
 	background-color: var(--wsiw-yellow);
 }
-

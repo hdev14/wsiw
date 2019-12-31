@@ -5,7 +5,7 @@ import '../styles/series-info.css';
 //components 
 import Header from '../components/Header';
 import Tag from '../components/Tag';
-import FormSeries from '../components/FormSeries';
+import EditSeries from '../components/EditSeries';
 import { 
 	Container,
 } from 'reactstrap';
@@ -26,7 +26,7 @@ const SeriesInfo = ({
 		<div id="page-series-info">
 			<Header back="/series" series/>
 
-			<FormSeries modalTitle="Edit" />
+			<EditSeries />
 
 			<div id="poster" style={styles}>
 				<img src={posterImg} alt="img"/>

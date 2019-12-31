@@ -5,8 +5,8 @@ import '../styles/series.css';
 
 //components
 import Header from '../components/Header';
-import EmptyCard from '../components/EmptyCard';
-import Card from '../components/Card';
+import EmptyCardSeries from '../components/EmptyCardSeries';
+import CardSeries from '../components/CardSeries';
 import {
 	Container,
 } from 'reactstrap';
@@ -21,16 +21,16 @@ const Series = () => {
 				
 				{ true ? 
 					<div>
-						<EmptyCard />
+						<EmptyCardSeries />
 						<h2 id="footer-series" className="text-center"> Add a new series ! </h2>
 					</div>
 					:	
 					<div>
-						<Card />
-						<Card />
-						<Card />
-						<Card />
-						<Card />
+						<CardSeries />
+						<CardSeries />
+						<CardSeries />
+						<CardSeries />
+						<CardSeries />
 					</div>
 				}
 
