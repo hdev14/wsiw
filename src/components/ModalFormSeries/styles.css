@@ -26,35 +26,3 @@
 	background-color: var(--wsiw-red);
 }
 
-div#radios {
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-}
-
-div#radios div {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background-color: var(--wsiw-grey-normal);
-	color: var(--wsiw-grey-intense);
-	padding: 5px var(--size-1x);
-	margin-bottom: 15px;
-	border-radius: 5px;
-}
-
-div#radios div input[type=radio] {
-	display: none;
-}
-
-div#radios div.to-watch {
-	background-color: var(--wsiw-red);
-}
-
-div#radios div.watching {
-	background-color: var(--wsiw-green);
-}
-
-div#radios div.assisted {
-	background-color: var(--wsiw-yellow);
-}

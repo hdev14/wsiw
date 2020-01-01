@@ -16,19 +16,29 @@ import {
 	Label,
 } from 'reactstrap';
 
-const ModalFormSeries = ({ toggle, modal, modalTitle, seriesId = 1 }) => {
+const ModalFormSeries = ({ toggle, modal, modalTitle, seriesId = null }) => {
 	
 	const [id, setId] = useState(seriesId)
-		, [series, setSeries] = useState({})
+		, [series, setSeries] = useState({ 
+			id: null, 
+			name: null, 
+			status: null, 
+			genre: null, 
+			genre_id: null, 
+			comments: null,
+			genre_index: null 
+		})
 		, [genres, setGenres] = useState([]);
 
 
 	useEffect(() => {
 		
 		if (id !== null) {
+			
 			api.get(`series/${id}`).then(res => {
 				setSeries(res.data);
 			});
+
 			setId(null);
 		}
 
@@ -46,55 +56,57 @@ const ModalFormSeries = ({ toggle, modal, modalTitle, seriesId = 1 }) => {
 
 	}, []);
 
-	const changeStatus = evt => {
-		// Get "for"
-		console.log(evt);
-	}
+	const submit = evt => {
 
-	const submit = () => {
-		//api.post('series', {series})
+		evt.preventDefault();
+
+		const seriesData = series;
+		const genre = genres[seriesData.genre_index];
+		seriesData.genre_id = genre.id;
+		seriesData.genre = genre.name;
+		delete seriesData.genre_index;
+
+		console.log("SERIES DATA", seriesData);
+		api.post('series', seriesData).then(res => {
+			document.location.reload();
+		});
 	};
 
 	const form = field => evt => {
-		
-		console.log(evt);
+		console.log("FIELD", field);
+		console.log("INPUT", evt.target.value);
 		setSeries({
-			[field]: evt.target.value,
-			...series
+			...series,
+			[field]: evt.target.value
 		});
 	};
 
 	return (
 		<Modal centered id="form-series-modal" isOpen={modal} toggle={toggle}>
-			<ModalHeader>{modalTitle}</ModalHeader>
+			<ModalHeader toggle={toggle}>{modalTitle}</ModalHeader>
 			<ModalBody>
 				<Form id="series-form">
-					<FormGroup id="radios" check inline>
-						<div className={ series.status === 'to-watch' ? 'to-watch' : ''}>
-							<Input id="radio1" type="radio" name="status" onChange={form('status')} />
-							<Label onClick={changeStatus} htmlFor="radio1" check>To Watch</Label>
-						</div>
-						<div className={ series.status === 'watching' ? 'watching' : ''}>
-							<Input id="radio2" type="radio" name="status" onChange={form('status')} />
-							<Label onClick={changeStatus} htmlFor="radio2" check>Watching</Label>
-						</div>
-						<div className={ series.status === 'assisted' ? 'assisted' : ''}>
-							<Input id="radio3" type="radio" name="status" onChange={form('status')} />	
-							<Label onClick={changeStatus} htmlFor="radio3" check>Assisted</Label>
-						</div>
+					<FormGroup>
+						<Input type="select" onChange={form('status')}>
+							<option>Status</option>
+							<option value="to-watch">To watch</option>
+							<option value="watching">Watching</option>
+							<option value="assisted">Assisted</option>
+						</Input>
 					</FormGroup>
 					<FormGroup>
-						<Input type="select" placeholder="Chose genre">
-							{genres.map(genre => (
-								<option key={genre.id} value={genre.id}>{genre.name}</option>	
+						<Input type="select" onChange={form('genre_index')}>
+							<option>Choose genre</option>
+							{genres.map((genre, index) => (
+								<option key={index} value={index}>{genre.name}</option>	
 							))}
 						</Input>
 					</FormGroup>
 					<FormGroup>
-						<Input type="text" placeholder="Title" value={series.name}/>		
+						<Input type="text" placeholder="Title" defaultValue={series.name} onChange={form('name')}/>		
 					</FormGroup>
 					<FormGroup>
-						<Input type="textarea" placeholder="Description" value={series.comments} />		
+						<Input type="textarea" placeholder="Description" defaultValue={series.comments} onChange={form('comments')} />		
 					</FormGroup>
 				</Form>
 			</ModalBody>

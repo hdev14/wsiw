@@ -17,8 +17,7 @@ const EmptyCard = () => {
 			<ModalFormSeries 
 				modalTitle="New series" 
 				modal={modal} 
-				toggle={toggle} 
-				seriesId={1} />
+				toggle={toggle} />
 		</div>
 	);
 }
