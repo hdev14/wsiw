@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import api from '../services/api';
 
 import '../styles/series-info.css';
 
@@ -10,39 +11,50 @@ import {
 	Container,
 } from 'reactstrap';
 
-const SeriesInfo = ({
-	bgImg = '/assets/card-bg.jpeg', 
-	posterImg = '/assets/poster.jpeg',
-	title = 'One Punch Man',
-	description = 'Mussum Ipsum, cacilds vidis litro abertis. Nec orci ornare consequat. Praesent lacinia ultrices consectetur.',
-	status = 'watching'
-}) => {
+const SeriesInfo = ({ match }) => {
 
-	const styles = {
-		backgroundImage: `radial-gradient(rgba(0, 0, 0, 0.1) , rgba(0, 0, 0, 0.3)), url(${bgImg})`
-	};
+	const [series, setSeries] = useState({});
+	const [styles, setStyles] = useState({});
+
+	useEffect(() => {
+
+		api.get(`series/${5}`).then(res => {
+			console.log("INFO SERIES", res.data);
+			setSeries(res.data);
+		});
+
+	}, []);
 
 	return (
 		<div id="page-series-info">
 			<Header back="/series" series/>
 
-			<EditSeries />
+			<EditSeries seriesId={series.id}/>
 
-			<div id="poster" style={styles}>
-				<img src={posterImg} alt="img"/>
+			<div id="poster" style={{ 
+				backgroundImage: `radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url("http:${series.background}")`
+			}}>
+				<img src={series.poster} alt="img" height="200" width="150"/>
 			</div>
 
 			<Container className="wsiw-container themed-container" fluid="sm"> 
-				<h2 id="title">{title}</h2>
+				<h2 id="title">{series.name}</h2>
 				<div id="tags">
-					<Tag classes="tag dark"/>
-					<Tag classes="tag dark" />
+					<Tag classes="tag dark" tagValue={series.genre} />
 				</div>
-				<h2 id="desc">{description}</h2>
+				<h2 id="desc">{series.comments}</h2>
 			</Container>
 			
-			<div id="alert" className={status}>
-				{status}
+			<div id="alert" className={series.status}>
+				{series.status === 'to-wacth' ? 
+					'to watch' 
+					:
+					(series.status === 'watching' ?
+						'watching'
+						:
+						'assisted'
+					)
+				}
 			</div>
 		</div>
 	);

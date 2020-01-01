@@ -46,6 +46,6 @@ div#page-series-info #alert.to-watch {
 	background-color: var(--wsiw-red);
 } 
 
-div#page-series-info #alert.attempt {
+div#page-series-info #alert.assisted {
 	background-color: var(--wsiw-yellow);
 }  

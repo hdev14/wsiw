@@ -7,7 +7,7 @@ import ModalFormSeries from '../ModalFormSeries';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const EditSeries = () => {
+const EditSeries = ({ seriesId }) => {
 
 	const [edit, setEdit] = useState(faPen);
 	const [modal, setModal] = useState(false);
@@ -22,7 +22,11 @@ const EditSeries = () => {
 			<button id="edit" onClick={toggle}>
 				<FontAwesomeIcon icon={edit}/>
 			</button>
-			<ModalFormSeries modal={modal} modalTitle="Edit" toggle={toggle} />
+			<ModalFormSeries 
+				modal={modal} 
+				modalTitle="Edit" 
+				toggle={toggle} 
+				seriesId={seriesId} />
 		</div>
 	);
 }

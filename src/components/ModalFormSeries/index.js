@@ -18,8 +18,7 @@ import {
 
 const ModalFormSeries = ({ toggle, modal, modalTitle, seriesId = null }) => {
 	
-	const [id, setId] = useState(seriesId)
-		, [series, setSeries] = useState({ 
+	const [series, setSeries] = useState({ 
 			id: null, 
 			name: null, 
 			status: null, 
@@ -32,14 +31,14 @@ const ModalFormSeries = ({ toggle, modal, modalTitle, seriesId = null }) => {
 
 
 	useEffect(() => {
-		
-		if (id !== null) {
-			
-			api.get(`series/${id}`).then(res => {
+		console.log("ID", seriesId);
+
+		if (seriesId !== null) {
+
+			api.get(`series/${seriesId}`).then(res => {
 				setSeries(res.data);
 			});
 
-			setId(null);
 		}
 
 		// TODO get genres

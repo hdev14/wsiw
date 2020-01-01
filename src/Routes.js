@@ -6,7 +6,7 @@ import SeriesInfo from './pages/SeriesInfo';
 import Genres from './pages/Genres';
 
 const Routes = () => (
-	<Series />
+	<SeriesInfo />
 );
 
 export default Routes;
