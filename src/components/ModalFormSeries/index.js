@@ -43,16 +43,10 @@ const ModalFormSeries = ({ toggle, modal, modalTitle, seriesId = null }) => {
 		}
 
 		// TODO get genres
-		setGenres([
-			{
-				id: 1,
-				name: 'action',
-			},
-			{
-				id: 2,
-				name: 'comedy',
-			}
-		]);
+		api.get('genres').then(res => {
+			console.log("GENRES", res.data);
+			setGenres(res.data);
+		});
 
 	}, []);
 
