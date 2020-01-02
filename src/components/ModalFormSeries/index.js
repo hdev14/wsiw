@@ -13,11 +13,10 @@ import {
 	ModalHeader,
 	ModalBody,
 	ModalFooter,
-	Label,
 } from 'reactstrap';
 
-const ModalFormSeries = ({ toggle, modal, modalTitle, seriesId = null }) => {
-	
+const ModalFormSeries = ({ toggle, modal, modalTitle, seriesId, edit = false }) => {
+
 	const [series, setSeries] = useState({ 
 			id: null, 
 			name: null, 
@@ -31,19 +30,8 @@ const ModalFormSeries = ({ toggle, modal, modalTitle, seriesId = null }) => {
 
 
 	useEffect(() => {
-		console.log("ID", seriesId);
-
-		if (seriesId !== null) {
-
-			api.get(`series/${seriesId}`).then(res => {
-				setSeries(res.data);
-			});
-
-		}
-
 		// TODO get genres
 		api.get('genres').then(res => {
-			console.log("GENRES", res.data);
 			setGenres(res.data);
 		});
 
@@ -53,26 +41,49 @@ const ModalFormSeries = ({ toggle, modal, modalTitle, seriesId = null }) => {
 
 		evt.preventDefault();
 
-		const seriesData = series;
-		const genre = genres[seriesData.genre_index];
-		seriesData.genre_id = genre.id;
-		seriesData.genre = genre.name;
-		delete seriesData.genre_index;
-
-		console.log("SERIES DATA", seriesData);
-		api.post('series', seriesData).then(res => {
-			document.location.reload();
+		const genre = genres.filter(g => {
+			return g.id === series.genre_index; 
 		});
+
+		console.log("GENRE", genre);
+
+		setSeries({
+			...series,
+			genre: genre.name,
+			genre_id: genre.id
+		})
+
+		console.log("EDIT", edit);
+		console.log("ID EDIT", series.id);
+
+		if (!edit) {
+			api.post('series', series).then(res => {
+				document.location.reload();
+			});
+		} else {
+			console.log("EDIT");
+			api.put(`series/${series.id}`, series).then(res => {
+				document.location.reload(true);
+			}).catch(err => {
+				console.error(err);
+			});
+		}
 	};
 
 	const form = field => evt => {
-		console.log("FIELD", field);
-		console.log("INPUT", evt.target.value);
+		console.log("VALUE", evt.target.value);
 		setSeries({
 			...series,
 			[field]: evt.target.value
 		});
 	};
+
+
+	if (seriesId !== null) {
+		api.get(`series/${seriesId}`).then(res => {
+			setSeries(res.data);
+		});
+	}
 
 	return (
 		<Modal centered id="form-series-modal" isOpen={modal} toggle={toggle}>
@@ -80,7 +91,7 @@ const ModalFormSeries = ({ toggle, modal, modalTitle, seriesId = null }) => {
 			<ModalBody>
 				<Form id="series-form">
 					<FormGroup>
-						<Input type="select" onChange={form('status')}>
+						<Input type="select" onChange={form('status')} defaultValue={series.status}>
 							<option>Status</option>
 							<option value="to-watch">To watch</option>
 							<option value="watching">Watching</option>
@@ -88,10 +99,10 @@ const ModalFormSeries = ({ toggle, modal, modalTitle, seriesId = null }) => {
 						</Input>
 					</FormGroup>
 					<FormGroup>
-						<Input type="select" onChange={form('genre_index')}>
+						<Input type="select" onChange={form('genre_index')} defaultValue={series.genre_id}>
 							<option>Choose genre</option>
 							{genres.map((genre, index) => (
-								<option key={index} value={index}>{genre.name}</option>	
+								<option key={genre.id} value={genre.id}>{genre.name}</option>	
 							))}
 						</Input>
 					</FormGroup>

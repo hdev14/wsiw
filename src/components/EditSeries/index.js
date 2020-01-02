@@ -26,7 +26,8 @@ const EditSeries = ({ seriesId }) => {
 				modal={modal} 
 				modalTitle="Edit" 
 				toggle={toggle} 
-				seriesId={seriesId} />
+				seriesId={seriesId} 
+				edit />
 		</div>
 	);
 }

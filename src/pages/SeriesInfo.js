@@ -14,14 +14,17 @@ import {
 const SeriesInfo = ({ match }) => {
 
 	const [series, setSeries] = useState({});
-	const [styles, setStyles] = useState({});
 
 	useEffect(() => {
+		const xhr = new XMLHttpRequest();
+		xhr.open('get', 'http://localhost:3002/api/series/5');
+		xhr.send(null);
 
-		api.get(`series/${5}`).then(res => {
-			console.log("INFO SERIES", res.data);
-			setSeries(res.data);
-		});
+		xhr.onreadystatechange = function() {
+			if(xhr.readyState === 4 && xhr.status === 200) {
+				setSeries(JSON.parse(xhr.responseText));
+			} 
+		}
 
 	}, []);
 
@@ -46,8 +49,8 @@ const SeriesInfo = ({ match }) => {
 			</Container>
 			
 			<div id="alert" className={series.status}>
-				{series.status === 'to-wacth' ? 
-					'to watch' 
+				{series.status === 'to-watch' ? 
+					'to-watch' 
 					:
 					(series.status === 'watching' ?
 						'watching'
