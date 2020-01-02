@@ -14,17 +14,12 @@ import {
 const SeriesInfo = ({ match }) => {
 
 	const [series, setSeries] = useState({});
-
+	const [seriesId, setSeriesId] = useState(0);
 	useEffect(() => {
-		const xhr = new XMLHttpRequest();
-		xhr.open('get', 'http://localhost:3002/api/series/5');
-		xhr.send(null);
-
-		xhr.onreadystatechange = function() {
-			if(xhr.readyState === 4 && xhr.status === 200) {
-				setSeries(JSON.parse(xhr.responseText));
-			} 
-		}
+		api.get(`series/${5}`).then(res => {
+			console.log("asgdygas", res.data);
+			setSeries(res.data);
+		});
 
 	}, []);
 

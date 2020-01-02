@@ -35,7 +35,13 @@ const ModalFormSeries = ({ toggle, modal, modalTitle, seriesId, edit = false }) 
 			setGenres(res.data);
 		});
 
-	}, []);
+		if (seriesId !== null) {
+			api.get(`series/${seriesId}`).then(res => {
+				setSeries(res.data);
+			});
+		}
+
+	}, [seriesId]);
 
 	const submit = evt => {
 
@@ -53,9 +59,6 @@ const ModalFormSeries = ({ toggle, modal, modalTitle, seriesId, edit = false }) 
 			genre_id: genre.id
 		})
 
-		console.log("EDIT", edit);
-		console.log("ID EDIT", series.id);
-
 		if (!edit) {
 			api.post('series', series).then(res => {
 				document.location.reload();
@@ -71,19 +74,11 @@ const ModalFormSeries = ({ toggle, modal, modalTitle, seriesId, edit = false }) 
 	};
 
 	const form = field => evt => {
-		console.log("VALUE", evt.target.value);
 		setSeries({
 			...series,
 			[field]: evt.target.value
 		});
 	};
-
-
-	if (seriesId !== null) {
-		api.get(`series/${seriesId}`).then(res => {
-			setSeries(res.data);
-		});
-	}
 
 	return (
 		<Modal centered id="form-series-modal" isOpen={modal} toggle={toggle}>
