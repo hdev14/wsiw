@@ -46,7 +46,7 @@ const ModalFormSeries = ({ toggle, modal, modalTitle, seriesId, edit = false }) 
 	const submit = evt => {
 
 		evt.preventDefault();
-		
+
 		const genre = genres.find(g => g.id === parseInt(series.genre_index));
 
 		series.genre = genre.name;
@@ -58,11 +58,8 @@ const ModalFormSeries = ({ toggle, modal, modalTitle, seriesId, edit = false }) 
 				document.location.reload();
 			});
 		} else {
-			console.log("EDIT");
 			api.put(`series/${series.id}`, series).then(res => {
 				document.location.reload();
-			}).catch(err => {
-				console.error(err);
 			});
 		}
 	};

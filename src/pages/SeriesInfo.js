@@ -17,10 +17,8 @@ const SeriesInfo = ({ match }) => {
 	const [seriesId, setSeriesId] = useState(0);
 	useEffect(() => {
 		api.get(`series/${5}`).then(res => {
-			console.log("asgdygas", res.data);
 			setSeries(res.data);
 		});
-
 	}, []);
 
 	return (
