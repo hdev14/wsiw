@@ -7,12 +7,12 @@ import ModalFormSeries from '../ModalFormSeries';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
-const EmptyCard = () => {
+const EmptyCard = ({ circle = ''}) => {
 	const [modal, setModal] = useState(false);
 
 	const toggle = () => setModal(!modal)
 	return (
-		<div id="empty-card" onClick={toggle}>
+		<div id="empty-card" className={circle} onClick={toggle}>
 			<FontAwesomeIcon id="plus" icon={faPlus} />
 			<ModalFormSeries 
 				modalTitle="New series" 

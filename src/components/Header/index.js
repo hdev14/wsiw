@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import './styles.css';
 
@@ -26,9 +27,9 @@ const Header = ({ back = '', series = false, genre = false , id = '' }) => {
 			<Navbar className="header-navbar" fixed="top" >
 				{ back && 
 					// Link to={props.to}
-					<a id="header-back" href={back}> 
+					<Link id="header-back" to={back}> 
 						<FontAwesomeIcon icon={faChevronLeft} />
-					</a>
+					</Link>
 				}
 				<NavbarBrand href="/" className="mr-auto">WSIW?</NavbarBrand>
 
@@ -40,16 +41,10 @@ const Header = ({ back = '', series = false, genre = false , id = '' }) => {
 						<Collapse navbar isOpen={!collapsed}>
 							<Nav navbar>
 								<NavItem>
-									<NavLink href="/">Series</NavLink>
+									<NavLink tag={Link} to="/series">Series</NavLink>
 								</NavItem>
 								<NavItem>
-									<NavLink href="/">New series</NavLink>
-								</NavItem>
-								<NavItem>
-									<NavLink href="/">Genres</NavLink>
-								</NavItem>
-								<NavItem>
-									<NavLink href="/">New genres</NavLink>
+									<NavLink tag={Link} to="/genres">Genres</NavLink>
 								</NavItem>
 							</Nav>
 						</Collapse> 

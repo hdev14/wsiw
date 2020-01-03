@@ -43,12 +43,12 @@ const Series = () => {
 								img={s.background} 
 								status={s.status} 
 								genre={s.genre} />
-						))}	
+						))}
+						<EmptyCardSeries circle="button-circle" />	
 					</div>
 				}
 
 			</Container>
-			
 		</div>
 	);
 }
