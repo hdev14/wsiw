@@ -1,4 +1,8 @@
-	
+#card-link {
+	text-decoration: none;
+	color: var(--wsiw-yellow);
+}
+
 div#card {
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -12,8 +16,6 @@ div#card {
 	margin-bottom: var(--size-2x);
 	transition: all .2s ease-out;
 }
-
-div#card:hover { transform: scale(1.03); }
 
 div#card #card-tags {
 	align-self: flex-end;

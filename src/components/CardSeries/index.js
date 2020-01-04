@@ -1,11 +1,12 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom'
 import './styles.css';
 
 //components
 import Tag from '../Tag';
 
 const CardSeries = ({ 
+	seriesId = null,
 	title = 'One Punch Man', 
 	img = '/assets/card-bg.jpeg', 
 	status = 'watching',
@@ -17,15 +18,18 @@ const CardSeries = ({
 	};
 
 	return (
-		<div id="card" style={styles}>
-			<div id="card-tags">
-				<Tag tagValue={genre} />
+		<Link id="card-link" to={`/series-info/${seriesId}`}>
+			<div id="card" style={styles}>
+				<div id="card-tags">
+					<Tag tagValue={genre} />
+				</div>
+				<h1>{title}</h1>
+				<div id="card-alert" className={status}>
+					{status}
+				</div>
 			</div>
-			<h1>{title}</h1>
-			<div id="card-alert" className={status}>
-				{status}
-			</div>
-		</div>
+		</Link>
+		
 	);	
 } 
 

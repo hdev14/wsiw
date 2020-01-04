@@ -6,22 +6,22 @@ div#empty-card-genre {
 	width: 100%;
 	border-radius: 5px;
 	background-color: var(--wsiw-grey-medium);
-	color: var(--wsiw-grey-normal);
+	color: var(--wsiw-grey-yellow);
 	transition: all .2s ease-out;
 	animation: pulse-shadow 1.8s infinite;
 }
 
 div#empty-card-genre:hover {
 	transform: scale(1.03);
-	color: var(--wsiw-yellow);
+	color: var(--wsiw-normal);
 	animation: none;
 }
-
+/*
 div#empty-card-genre #icon {
 	width: 100%;
 	height: 70%;
 }
-
+*/
 #form-genre-modal .modal-content {
 	background-color: var(--wsiw-grey-medium);
 }
@@ -34,4 +34,14 @@ div#empty-card-genre #icon {
 #form-genre-modal button.btn#save {
 	border:none;
 	background-color: var(--wsiw-green);
+}
+
+div#empty-card-genre.button-circle {
+	position: fixed;
+	right: var(--size-2x);
+	bottom: var(--size-2x);
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+
 }

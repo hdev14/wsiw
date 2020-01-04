@@ -55,11 +55,13 @@ const ModalFormSeries = ({ toggle, modal, modalTitle, seriesId, edit = false }) 
 
 		if (!edit) {
 			api.post('series', series).then(res => {
-				document.location.reload();
+				if (res.status === 200)
+					document.location.reload();
 			});
 		} else {
 			api.put(`series/${series.id}`, series).then(res => {
-				document.location.reload();
+				if (res.status === 200)
+					document.location.reload();
 			});
 		}
 	};

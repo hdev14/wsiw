@@ -21,7 +21,7 @@ const CardGenre = ({ genreId, name = 'genre' }) => {
 
 	const deleteGenre = () => {
 		api.delete(`genres/${genreId}`).then(res => {
-			if (res.data.success)
+			if (res.status === 200)
 				window.location.reload();
 		});
 	}

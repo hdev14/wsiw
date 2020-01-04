@@ -37,12 +37,15 @@ const Series = () => {
 					:
 					<div>
 						{series.map(s => (
+							
 							<CardSeries 
-								key={s.id} 
+								key={s.id}
+								seriesId={s.id} 
 								title={s.name} 
 								img={s.background} 
 								status={s.status} 
-								genre={s.genre} />
+								genre={s.genre}
+								/>
 						))}
 						<EmptyCardSeries circle="button-circle" />	
 					</div>

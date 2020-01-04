@@ -39,6 +39,7 @@ const Genres = () => {
 						{genres.map(genre => (
 							<CardGenre key={genre.id} genreId={genre.id} name={genre.name} />
 						))}
+						<EmptyCardGenre circle="button-circle"/>
 					</div>
 				}
 			</Container>
