@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import api from '../../services/api';
 
 import './styles.css';
 
@@ -13,10 +14,17 @@ import {
 	ModalBody
 } from 'reactstrap';
 
-const CardGenre = ({ name = 'genre' }) => {
+const CardGenre = ({ genreId, name = 'genre' }) => {
 	const [modal, setModal] = useState(true);
 
 	const toggle = () => setModal(!modal);
+
+	const deleteGenre = () => {
+		api.delete(`genres/${genreId}`).then(res => {
+			if (res.data.success)
+				window.location.reload();
+		});
+	}
 
 	return (
 		<div id="card-genre">
@@ -32,7 +40,7 @@ const CardGenre = ({ name = 'genre' }) => {
 				</ModalHeader>
 				<ModalBody id="delete-options">
 					<Button id="cancel" onClick={toggle}>Cancel</Button>
-					<Button id="yes">Yes</Button>
+					<Button id="yes" onClick={deleteGenre} >Yes</Button>
 				</ModalBody>
 			</Modal>
 		</div>
