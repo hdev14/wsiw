@@ -29,7 +29,6 @@ const CardSeries = ({
 				</div>
 			</div>
 		</Link>
-		
 	);	
 } 
 

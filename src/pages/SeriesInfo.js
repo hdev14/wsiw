@@ -16,7 +16,7 @@ const SeriesInfo = ({ match }) => {
 	const [series, setSeries] = useState({});
 	const [seriesId, setSeriesId] = useState(0);
 	useEffect(() => {
-		api.get(`series/${5}`).then(res => {
+		api.get(`series/${match.params.id}`).then(res => {
 			setSeries(res.data);
 		});
 	}, []);
