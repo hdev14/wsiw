@@ -22,3 +22,16 @@ div#empty-card-genre #icon {
 	height: 70%;
 }
 
+#form-genre-modal .modal-content {
+	background-color: var(--wsiw-grey-medium);
+}
+
+#form-genre-modal .modal-header,
+#form-genre-modal .modal-footer {
+	border: none;
+}
+
+#form-genre-modal button.btn#save {
+	border:none;
+	background-color: var(--wsiw-green);
+}
